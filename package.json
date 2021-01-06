@@ -1,0 +1,25 @@
+{
+  "name": "sample-dashboard-backend",
+  "version": "1.0.0",
+  "description": "This is a sample dashboard backend that leverages Node Express and a MongoDB NoSQL database for it's REST API.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ParmeJon/sample_dashboard.git"
+  },
+  "author": "Jonathan Chan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ParmeJon/sample_dashboard/issues"
+  },
+  "homepage": "https://github.com/ParmeJon/sample_dashboard#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
