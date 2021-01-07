@@ -4,7 +4,10 @@
   "description": "This is a sample dashboard backend that leverages Node Express and a MongoDB NoSQL database for it's REST API.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix"
   },
   "repository": {
     "type": "git",
@@ -17,9 +20,14 @@
   },
   "homepage": "https://github.com/ParmeJon/sample_dashboard#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.10"
   },
   "devDependencies": {
+    "eslint": "^7.17.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
     "nodemon": "^2.0.6"
   }
 }
