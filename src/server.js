@@ -10,6 +10,7 @@ const dbname = process.env.DBNAME;
 const port = process.env.PORT;
 
 const mongoURI = `mongodb+srv://${username}:${password}@sample-dashboard.kolop.mongodb.net/${dbname}?retryWrites=true&w=majority`;
+
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
