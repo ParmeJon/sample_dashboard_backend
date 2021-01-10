@@ -9,6 +9,10 @@ app.use(cors());
 
 const accountRouter = require('./routes/api/account');
 
+app.get('/', (req, res) => {
+  res.redirect('/accounts');
+});
+
 app.use(accountRouter);
 
 const username = process.env.MONGODB_USERNAME;
@@ -21,6 +25,7 @@ const mongoURI = `mongodb+srv://${username}:${password}@sample-dashboard.kolop.m
 mongoose.connect(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  useFindAndModify: false,
 })
   .then(() => console.log('connected to db'))
   .catch((err) => console.log(err));

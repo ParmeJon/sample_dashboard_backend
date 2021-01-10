@@ -1,23 +1,57 @@
 const Account = require('../models/Account');
 
-const accountCreate = (req, res) => {
-  res.send('NOT IMPLEMENTED: Account Create');
+const accountCreate = async (req, res) => {
+  try {
+    const account = new Account(req.body);
+    await account.save();
+    res.redirect('/');
+  } catch(err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
 };
 
-const accountList = (req, res) => {
-  res.send('NOT IMPLEMENTED: Account List');
+const accountList = async (req, res) => {
+  try {
+    const accounts = await Account.find();
+    res.send(accounts);
+  } catch(err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
 };
 
-const accountDetail = (req, res) => {
-  res.send(`NOT IMPLEMENTED: Account Detail: ${req.params.id}`);
+const accountDetail = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const account = await Account.findById(id);
+    res.send(account);
+  } catch(err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
 };
 
-const accountUpdate = (req, res) => {
-  res.send('NOT IMPLEMENTED: Account Update');
+const accountUpdate = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const updatedAccount = await Account.findByIdAndUpdate(id, req.body, { new: true });
+    res.send(updatedAccount);
+  } catch(err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
 };
 
-const accountDelete = (req, res) => {
-  res.send(`NOT IMPLEMENTED: Account delete POST: ${req.params.id}`);
+const accountDelete = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Account.findByIdAndDelete(id);
+    res.redirect('/');
+  } catch(err) {
+    console.log(err);
+    res.sendStatus(500);
+  }
 };
 
 module.exports = {
