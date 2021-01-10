@@ -5,6 +5,7 @@ const accountSchema = new mongoose.Schema(
     id: {
       type: String,
       unique: true,
+      require: true,
     },
     balance: String,
     credit: Number,
@@ -23,4 +24,4 @@ const accountSchema = new mongoose.Schema(
 
 const Account = mongoose.model('Account', accountSchema);
 
-export default Account;
+module.exports = Account;
