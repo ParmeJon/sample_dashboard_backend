@@ -10,7 +10,7 @@ app.use(cors());
 const accountRouter = require('./routes/api/account');
 
 app.get('/', (req, res) => {
-  res.redirect('/accounts');
+  res.send('Sample Dashboard API');
 });
 
 app.use(accountRouter);
