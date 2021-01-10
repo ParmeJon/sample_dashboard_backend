@@ -2,10 +2,9 @@ const mongoose = require('mongoose');
 
 const accountSchema = new mongoose.Schema(
   {
-    id: {
+    seedId: {
       type: String,
-      unique: true,
-      require: true,
+      required: false,
     },
     balance: String,
     credit: Number,
