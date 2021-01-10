@@ -23,4 +23,5 @@ DELETE request to delete Account. _id MongoDB is expected
 Some features that have not been implemented yet. 
 - [ ] Authentication
 - [ ] Validations
+- [ ] Rate Limiting
 - [ ] Clearer and more detailed error handling
