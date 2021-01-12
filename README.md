@@ -26,3 +26,4 @@ Some features that have not been implemented yet.
 - [ ] Validations
 - [ ] Rate Limiting
 - [ ] Clearer and more detailed error handling
+- [ ] Pagination
